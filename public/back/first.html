@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/common.css">
 </head>
 <!-- back/ -->
+
 <body>
 
     <div class="lt_aside">
@@ -50,7 +51,7 @@
         </div>
     </div>
     <!-- 退出模态框插件开始 -->
-    <div class="modal fade " tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="myModal" >
+    <div class="modal fade " tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="myModal">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -88,15 +89,25 @@
                 <li>
                     <a href="#">用户管理</a>
                 </li>
-                
             </ol>
+            <!-- 内容区域 -->
+            <div>
+                first.html
+            </div>
         </div>
-        <!-- 内容区域 -->
-        <div>
-            首页
-        </div>
-    </div>
 
+    </div>
+<script>
+function Person(){};
+    var p=new Person();
+    console.log(p instanceof Person);
+    
+    Person.prototype={};
+    var p1=new Person();
+    console.log(p instanceof Person);
+    console.log(p1 instanceof Person);
+
+</script>
 
 
     <script src="lib/jquery/jquery.js"></script>
