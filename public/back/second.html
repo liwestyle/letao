@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="lib/nprogress/nprogress.css">
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/second.css">
 </head>
 <!-- back/ -->
+
 <body>
 
     <div class="lt_aside">
@@ -50,7 +52,7 @@
         </div>
     </div>
     <!-- 退出模态框插件开始 -->
-    <div class="modal fade " tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="myModal" >
+    <div class="modal fade " tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="myModal">
         <div class="modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -70,6 +72,7 @@
         </div>
     </div>
     <!-- 退出模态框插件结束 -->
+    <!--  -->
     <div class="lt_main">
         <div class="lt_topbar">
             <a href="javascript:;" class="pull-left icon_menu" id="fideinout">
@@ -79,6 +82,7 @@
                 <span class="glyphicon glyphicon-log-out"></span>
             </a>
         </div>
+
         <div class="container-fluid">
             <!-- 面包销导航 -->
             <ol class="breadcrumb">
@@ -86,14 +90,36 @@
                     <a href="#">管理系统</a>
                 </li>
                 <li>
-                    <a href="#">用户管理</a>
+                    <a href="#">分类管理</a>
                 </li>
-                
+                <li>
+                    二级分类
+                </li>
             </ol>
         </div>
         <!-- 内容区域 -->
-        <div>
-            second.html
+        <div class="container-fluid">
+            <button class="btn btn-default mt_15" id="addcl">添加分类</button>
+            <div class="lt_content">
+                <table class="table table-bordered">
+                    <thead >
+                        <tr>
+                            <th width="10%">序号</th>
+                            <th width="30%">一级分类名称</th>
+                            <th width="30%">二级分类名称</th>
+                            <th width="30%">二级分类LOGO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>11</td>
+                            <td>22</td>
+                            <td>33</td>
+                            <td><img width="50" height="50" src="images/none.png" alt=""></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
@@ -103,6 +129,7 @@
     <script src="lib/bootstrap/js/bootstrap.js"></script>
     <script src="lib/nprogress/nprogress.js"></script>
     <script src="js/common.js"></script>
+    <script src="js/second.js"></script>
     <!-- <script src="js/login.js"></script> -->
 </body>
 
