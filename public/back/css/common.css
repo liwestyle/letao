@@ -4,6 +4,9 @@ html,body{height: 100%;}
 a:hover{
     text-decoration: none
 }
+.mt_15{
+    margin-bottom: 15px;
+}
 .login_bj .container{margin-top: 150px}
 /* 首页 */
 .lt_aside{
@@ -77,9 +80,13 @@ a:hover{
 .lt_main.now{padding-left: 0;}
 
 
-
-
-
+/* 分类 */
+.lt_aside .nav a.now {
+    border-left-color: #069;
+    background-color: #1d1f21;
+    color: #fff;
+}
+/* user */
 
 
 

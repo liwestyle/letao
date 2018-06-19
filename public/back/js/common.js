@@ -17,7 +17,7 @@ if(location.href.indexOf("login.html") == -1){
         type:"get",
         url:"/employee/checkRootLogin",
         success: function(info){
-            console.log(info);
+            // console.log(info);
             if(info.error == 400 ){
                 location.href = "login.html"
             }
