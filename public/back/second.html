@@ -8,6 +8,7 @@
     <title>index</title>
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="lib/nprogress/nprogress.css">
+    <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/second.css">
 </head>
@@ -72,7 +73,55 @@
         </div>
     </div>
     <!-- 退出模态框插件结束 -->
-    <!--  -->
+    <!-- 添加二级模态框分类开始 -->
+    <div class="modal fade " tabindex="-1" aria-labelledby="mySmallModalLabel" id="addModalcl">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">添加分类</h4>
+                </div>
+                <form id="form">
+                    <div class="modal-body ">
+                        <div class="form-group">
+                            <input type="hidden" name="categoryId">
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                                    请选择一级分类
+                                    <span class="caret"></span>
+                                </button>
+                                <!--  -->
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <!--挖个坑-->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="brandName" class="form-control" placeholder="请输入二级分类的名称">
+                        </div>
+                        <!-- 上传图片 -->
+                        <div class="form-group">
+                            <label class="btn btn-default" for="fileupload">上传图片</label>
+                            <input type="file" class="hidden" id="fileupload" name="pic1" data-url="/category/addSecondCategoryPic">
+                            <input type="hidden" name="brandLogo" >
+                        </div>
+                        <!-- 图片显示区域 -->
+                        <div class="form-group">
+                            <img src="images/none.png" id="logo" width="100" height="100" alt="">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <!-- 提交按钮必须是 type = "submit"，  form="form" :form表单的id，允许你的input写到form的外面，可以通过form这个属性关联到表单，相当于写在form的里面 -->
+                        <button type="submit" class="btn btn-primary" id="addclass">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- 添加二级模态框分类结束 -->
     <div class="lt_main">
         <div class="lt_topbar">
             <a href="javascript:;" class="pull-left icon_menu" id="fideinout">
@@ -102,7 +151,7 @@
             <button class="btn btn-default mt_15" id="addcl">添加分类</button>
             <div class="lt_content">
                 <table class="table table-bordered">
-                    <thead >
+                    <thead>
                         <tr>
                             <th width="10%">序号</th>
                             <th width="30%">一级分类名称</th>
@@ -111,26 +160,52 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>11</td>
-                            <td>22</td>
-                            <td>33</td>
-                            <td><img width="50" height="50" src="images/none.png" alt=""></td>
-                        </tr>
+                        <!-- 挖个坑 -->
                     </tbody>
                 </table>
             </div>
+            <!-- 分页 -->
+            <div class="text-right">
+                <ul class="pagination" id="paginator"></ul>
+            </div>
         </div>
     </div>
+    <!-- 模板1 -->
+    <script type="text/html" id="tpl-1">
+        {{each rows v i}}
+        <tr>
+            <td>{{(page-1)*size+i+1}}</td>
+            <td>{{v.categoryName}}</td>
+            <td>{{v.brandName}}</td>
+            <td>
+                <img width="50" height="50" src="{{v.brandLogo}}" alt="">
+            </td>
+        </tr>
+        {{/each}}
+    </script>
+    <!-- 模板2 -->
+    <script type="text/html" id="tpl-2">
+        {{each rows v i}}
+            <li>
+                <a data-id = "{{v.id}}" href="javascript:;">{{v.categoryName}}</a>
+            </li> 
+        {{/each}} 
 
+    </script>
 
 
     <script src="lib/jquery/jquery.js"></script>
     <script src="lib/bootstrap/js/bootstrap.js"></script>
     <script src="lib/nprogress/nprogress.js"></script>
+    <script src="lib/artTemplate/template-web.js"></script>
+    <script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+    <script src="lib/jquery-fileupload/jquery.ui.widget.js"></script>
+    <script src="lib/jquery-fileupload/jquery.fileupload.js"></script>
+    <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
     <script src="js/common.js"></script>
     <script src="js/second.js"></script>
     <!-- <script src="js/login.js"></script> -->
+
 </body>
 
 </html>
