@@ -138,8 +138,6 @@ $form.on("success.form.bv",function(e){
             }
         }
     });
-    
-    
 })
 
 
